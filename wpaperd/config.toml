@@ -1,0 +1,6 @@
+[default]
+duration = "4h"
+mode = "center"
+
+[any]
+path = "~/.config/wpaperd/images"
