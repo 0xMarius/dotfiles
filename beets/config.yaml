@@ -1,0 +1,86 @@
+include:
+  - secrets.yaml
+  - plugins.yaml
+
+original_date: yes
+
+per_disc_numbering: yes
+
+threaded: yes
+
+asciify_path: yes
+
+paths:
+  default: $albumartist/$album%aunique{}/$track $title
+  singleton: $artist/Non-Album/$title
+  albumtype:soundtrack: Soundtracks/$album%aunique{}/$track $title
+  comp: Compilations/$album%aunique{}/$track $title
+  
+import:
+  write: yes
+  move: yes
+  resume: yes
+  incremental: no
+  incremental_skip_later: no
+  from_scratch: no
+  quiet_fallback: skip
+  none_rec_action: ask
+  timid: no
+  log: ~/.config/beets/beet.log
+  default_action: apply
+  languages: en
+  detail: no
+  group_albums: no
+  autotag: yes
+  duplicate_action: ask
+
+musicbrainz:
+  user: REDACTED
+  pass: REDACTED
+  searchlimit: 20
+  extra_tags:
+    [
+      catalognum,
+      country,
+      label,
+      media,
+      year
+    ]
+
+lastfm:
+  user: REDACTED
+  api_key: REDACTED
+
+lastgenre:
+  auto: yes
+  canonical: ~/.config/beets/genres/genres-tree.yaml 
+  whitelist: ~/.config/beets/genres/genres.txt
+  count: 5
+  fallback: 'Pop/Rock'
+  separator: '; '
+  force: no
+  min_weight: 10
+  prefer_specific: no
+  source: track
+  title_case: yes
+
+lyrics:
+  auto: yes
+  fallback: ''
+  force: no
+  sources: [lrclib, musixmatch, genius]
+
+fetchart:
+  auto: yes
+  cautious: no
+  enforce_ratio: yes
+  minwidth: 1000
+  maxwidth: 3000
+  sources:
+    - coverart
+    - itunes
+    - amazon
+    - albumart
+    - filesystem
+  store_source: yes
+

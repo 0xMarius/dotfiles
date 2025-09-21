@@ -1,0 +1,11 @@
+plugins:
+  [
+  edit,            # Lets you modify music metadata using your favorite text editor. ToDo: No config file yet.
+  embedart,        # Embed the album art directly into each file’s metadata.
+  export,          # Lets you get data from the items and export the content as JSON, CSV, or XML.
+  fetchart,        # Retrieves album art images from various sources on the Web and stores them as image files.
+  lastgenre,       # Fetches tags from Last.fm and assigns them as genres to your albums and items.
+  lyrics,          # Fetches and stores song lyrics from databases on the Web.
+  permissions,     # Set file permissions for imported music files and its directories. Permissions will be adjusted automatically on import.
+  ]
+
