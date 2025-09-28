@@ -25,8 +25,8 @@ if [[ -n "$font_name" && "$font_name" != "CNCLD" ]]; then
       -v "$font_name" \
       ~/.config/fontconfig/fonts.conf
 
-    restart-app waybar
-    restart-app fuzzel
+    app-restart waybar
+    app-restart fuzzel
   else
     echo "Font '$font_name' not found."
     exit 1
